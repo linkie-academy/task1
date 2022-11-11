@@ -1,0 +1,139 @@
+html,body{
+    font-family: 'Roboto', sans-serif;
+
+}
+.container{
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+}
+.todo{
+    width: 30%;
+    min-height: 100px;
+    max-height: 90vh;
+    overflow: auto;
+    background-color: #d8d8d8;
+    padding:10px;
+    margin-left: 30px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.todo input{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 15px;
+    border:1px dashed #6f6f6f;
+    background-color: transparent;
+    font-size: 25px;
+    margin: 10px auto;
+}
+.todo input:focus{
+    border:1px solid #6f6f6f;
+    outline: none;
+}
+.task{
+    background-color: #f2f2f2;
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.name{
+    display: inline-block;
+    width: 70%;
+}
+.icons{
+    display: inline-block;
+    color: white;
+    width: 25%;
+    font-size: 16px;
+}
+.icons i{
+    background-color: #bcbcbc;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 50%;
+}
+.taskPop{
+    width:65%;
+    background-color: #e8e8e8;
+    border:5px solid #d8d8d8;
+    margin-left: 1%;
+    border-radius: 10px;
+}
+.taskHead{
+
+    display:flex;
+    flex-wrap: wrap;
+}
+.taskHead h2{
+    width: 80%;
+}
+.taskHead h2{
+    padding-left: 30px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+.taskIcons{
+    padding: 10px;
+    width: 15%;
+    text-align: right;
+}
+.taskIcons i{
+    background-color: #bcbcbc;
+    margin-left: 5px;
+    padding-top: 12px;
+    border-radius: 50%;
+    color:white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.list{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.list input{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border-radius: 10px;
+    border: none;
+    top:5px
+}
+input[type=checkbox]:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    padding: 1px;
+    background-color: gray;
+}
+input[type=checkbox]:checked:before {
+    background-color: #00AEEF;
+}
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 10px;
+    height: 20px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    font-size: 25px;
+}
+.fa-trash:hover{
+    background-color: red;
+}
+.fa-close:hover,.fa-pen:hover{
+    background-color: #00AEEF;
+}
