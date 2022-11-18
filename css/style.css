@@ -1,5 +1,6 @@
 html,body{
     font-family: 'Roboto', sans-serif;
+
 }
 .container{
     width: 80%;
@@ -10,66 +11,76 @@ html,body{
     width: 30%;
     min-height: 100px;
     max-height: 90vh;
-    background-color: #d8d8d8;
     overflow: auto;
-    padding: 10px;
+    background-color: #d8d8d8;
+    padding:10px;
+    margin-left: 30px;
     border-radius: 10px;
+    font-size: 25px;
+}
+.todo input{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 15px;
+    border:1px dashed #6f6f6f;
+    background-color: transparent;
+    font-size: 25px;
+    margin: 10px auto;
+}
+.todo input:focus{
+    border:1px solid #6f6f6f;
+    outline: none;
 }
 .task{
-    display: flex;
     background-color: #f2f2f2;
-    padding: 10px;
+    padding: 5px 20px;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
 }
 .name{
+    display: inline-block;
     width: 70%;
-    padding-top: 5px;
 }
 .icons{
-    width: 30%;
-    text-align: right;
+    display: inline-block;
+    color: white;
+    width: 25%;
+    font-size: 16px;
 }
 .icons i{
     background-color: #bcbcbc;
     margin-left: 5px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 50%;
-    color:white;
-}
-.todo input{
-    width: 100%;
-    padding:15px;
-    box-sizing: border-box;
-    margin: 10px auto;
-    background-color: transparent;
-    border:1px dashed #6f6f6f;
-    border-radius: 10px;
-}
-.todo :focus {
-    outline: none;
-    border: 1px solid #6f6f6f;
 }
 .taskPop{
-    width: 70%;
-    margin-left: 3%;
+    width:65%;
     background-color: #e8e8e8;
     border:5px solid #d8d8d8;
+    margin-left: 1%;
     border-radius: 10px;
+    display: none;
 }
 .taskHead{
-    display: flex;
-    border-bottom: 1px solid #d8d8d8;
+
+    display:flex;
+    flex-wrap: wrap;
 }
 .taskHead h2{
-    width:80%;
-    padding-left:30px;
+    width: 80%;
+}
+.taskHead h2{
+    padding-left: 30px;
+    text-transform: uppercase;
+    box-sizing: border-box;
 }
 .taskIcons{
-    width: 20%;
+    padding: 10px;
+    width: 15%;
     text-align: right;
-    margin-top: 5px;
-    padding-right: 5px;
 }
 .taskIcons i{
     background-color: #bcbcbc;
@@ -83,48 +94,87 @@ html,body{
     box-sizing: border-box;
 }
 .list{
-    font-size: 20px;
+    width: 100%;
     margin-top: 10px;
+    font-size: 20px;
     padding-left: 20px;
+    cursor: pointer;
+    user-select: none;
 }
 .list input{
     width: 30px;
     height: 30px;
     position: relative;
-    border:none;
-    top:5px;
-    /*accent-color: #f8a100;*/
+    border-radius: 10px;
+    border: none;
+    top:5px
 }
-.list input:before{
-    content:"";
+input[type=checkbox]:before {
+    content: "";
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: #d8d8d8;
+    top: 0;
+    left: 0;
+    padding: 1px;
+    background-color: gray;
 }
-.list input:checked:before{
+input[type=checkbox]:checked:before {
     background-color: #00AEEF;
 }
-.list input:checked:after{
-    content:"";
-    position: absolute;
+input[type=checkbox]:checked:after {
+    content: "";
     display: block;
     margin: auto;
     width: 10px;
     height: 20px;
-    border:solid white;
+    border: solid white;
     border-width: 0 2px 2px 0;
-    top:2px;
-    left:10px;
-    font-size: 25px;
     transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    font-size: 25px;
 }
-.list .checked{
-    text-decoration: line-through;
-}
-.icons i.fa-trash:hover, .taskIcons i.fa-trash:hover{
+.fa-trash:hover{
     background-color: red;
 }
-.icons i.fa-pen:hover,.taskIcons i.fa-close:hover{
+.fa-close:hover,.fa-pen:hover{
     background-color: #00AEEF;
+}
+.checked{
+    text-decoration: line-through;
+}
+@media (max-width: 600px) {
+    *{
+        box-sizing: border-box;
+
+    }
+    .todo{
+        width: 100% !important;
+        margin: 0;
+    }
+    .container{
+        display: block;
+     width: 100%;
+    }
+    .taskPop{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .taskIcons {
+        width: 30%;
+    }
+    .taskHead h2 {
+        width: 70%;
+    }
+    .taskIcons i {
+        margin-left: 3px;
+        padding-top: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    .icons i{
+        padding: 5px;
+    }
 }
